@@ -1,0 +1,24 @@
+# docker-compose.yml (SQLite Development Setup)
+version: '3.8'
+
+services:
+  web:
+    # Build the image using the Dockerfile in the current directory
+    build: .
+    
+    # Run migrations first to set up db.sqlite3, then start the Django development server
+    # The 0.0.0.0 host ensures the server is accessible outside the container's localhost
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    
+    # Map the local code to the container's /code directory
+    # This enables live code changes and persists the db.sqlite3 file on your host machine
+    volumes:
+      - .:/code
+      
+    # Map the container's port 8000 to your machine's port 8000
+    ports:
+      - "8000:8000"
+      
+    # Simple environment variable for development (optional)
+    environment:
+      DEBUG: 'True'
