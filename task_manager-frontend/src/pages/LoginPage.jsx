@@ -1,8 +1,7 @@
-// taskmanager-frontend/src/pages/LoginPage.js
-
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../context/AuthContext.jsx';
+
 
 const LoginPage = () => {
     const { loginUser } = useContext(AuthContext);
@@ -14,32 +13,50 @@ const LoginPage = () => {
         loginUser(username, password);
     };
 
-    return (
-        <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-            <h1>User Login</h1>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-                <label style={{ margin: '10px 0 5px' }}>Username:</label>
-                <input 
-                    type="text" 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)} 
-                    required 
-                    style={{ padding: '10px', border: '1px solid #ddd' }}
-                />
-
-                <label style={{ margin: '10px 0 5px' }}>Password:</label>
-                <input 
-                    type="password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                    required 
-                    style={{ padding: '10px', border: '1px solid #ddd' }}
-                />
+     return (
+        <div className="card p-4 bg-dark text-white rounded-3 shadow-lg" style={{ maxWidth: '450px' }}>
+            
+            {}
+            <h1 className="card-title text-center text-white fw-light mb-4">User Login</h1>
+            
+            <form onSubmit={handleSubmit} className="d-flex flex-column gap-3">
                 
-                <button type="submit" style={{ padding: '10px', marginTop: '20px', cursor: 'pointer', backgroundColor: '#4CAF50', color: 'white' }}>Log In</button>
+                {}
+                <div className="form-group mb-2">
+                    <label className="form-label text-light mb-1">Username:</label>
+                    <input 
+                        type="text" 
+                        value={username} 
+                        onChange={(e) => setUsername(e.target.value)} 
+                        required className="form-control bg-secondary text-white rounded-pill border-0"
+                    />
+                </div>
+
+                {}
+                <div className="form-group mb-3">
+                    <label className="form-label text-light mb-1">Password:</label>
+                    <input 
+                        type="password" 
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required 
+                        className="form-control bg-secondary text-white rounded-pill border-0"
+                    />
+                </div>
+                
+                {}
+                 <button 
+                    type="submit" 
+                    className="btn w-100 rounded-pill fw-bold mt-2"
+                    style={{ backgroundColor: '#4CAF50', borderColor: '#4CAF50', color: 'white' }} 
+                >
+                    Log In
+                </button>
             </form>
-            <p style={{ marginTop: '15px', textAlign: 'center' }}>
-                Don't have an account? <Link to="/register">Register here</Link>
+            
+            {}
+            <p className="mt-4 text-center">
+                Don't have an account? <Link to="/register" className="text-info text-decoration-none">Register here</Link>
             </p>
         </div>
     );

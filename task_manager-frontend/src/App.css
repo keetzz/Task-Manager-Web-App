@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34; 
+  color: #e0e0e0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  border: 15px solid #a31545; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.login-input, .task-input-field {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px; 
+    background-color: #4a4d52;
+    color: #e0e0e0;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-input:focus, .task-input-field:focus {
+    box-shadow: 0 0 0 2px #a31545; 
+    background-color: #36393f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+button {
+  cursor: pointer;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px; 
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.card {
-  padding: 2em;
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
-.read-the-docs {
-  color: #888;
+
+.login-container, .task-dashboard-container {
+    background-color: #36393f;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    max-width: 550px; 
+    width: 90%;
+}
+
+.login-title, .task-header h2 {
+    color: #e0e0e0;
+    font-size: 2.2rem;
+    font-weight: 300; 
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    border-bottom: none;
+}
+
+
+.login-button, .register-button, .add-task-button {
+    background-color: #a31545; 
+    margin-top: 10px;
+    margin-left: 160px;
+}
+
+.logout-button {
+    background-color: #dc3545; 
+    margin-left: 160px;  
+    padding: 8px 20px;
 }

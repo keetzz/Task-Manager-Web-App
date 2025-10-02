@@ -1,5 +1,3 @@
-// taskmanager-frontend/src/context/AuthContext.js
-
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -11,17 +9,16 @@ const API_URL = 'http://localhost:8000/api/auth/';
 export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
-    // Initialize state from localStorage if tokens exist
+   
     const [authToken, setAuthToken] = useState(() => 
         localStorage.getItem('authToken') ? JSON.parse(localStorage.getItem('authToken')) : null
     );
-    // Note: user object here is just basic info (id, username)
+
     const [user, setUser] = useState(() => 
         localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
     );
     const [loading, setLoading] = useState(true);
 
-    // --- LOGIN FUNCTION ---
     const loginUser = async (username, password) => {
         try {
             const response = await axios.post(API_URL + 'login/', { 
@@ -48,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    // --- LOGOUT FUNCTION ---
+   
     const logoutUser = () => {
         setAuthToken(null);
         setUser(null);
@@ -57,7 +54,7 @@ export const AuthProvider = ({ children }) => {
         navigate('/login');
     };
 
-    // --- REGISTER FUNCTION ---
+  
     const registerUser = async (username, email, password) => {
         try {
             const response = await axios.post(API_URL + 'register/', {

@@ -16,18 +16,23 @@ const RegisterPage = () => {
     };
 
     return (
-        <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-            <h1>New User Registration</h1>
+       <div className="card p-4 bg-dark text-white rounded-3 shadow-lg" style={{ maxWidth: '450px' }}>
+        
+        <h1 className="card-title text-center text-white fw-light mb-4">New User Registration</h1>
+            
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
                 <label style={{ margin: '10px 0 5px' }}>Username:</label>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required style={{ padding: '10px', border: '1px solid #ddd' }}/>
+                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required 
+                        className="form-control bg-secondary text-white rounded-pill border-0"/>
 
                 <label style={{ margin: '10px 0 5px' }}>Email:</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ padding: '10px', border: '1px solid #ddd' }}/>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required 
+                        className="form-control bg-secondary text-white rounded-pill border-0"/>
 
                 <label style={{ margin: '10px 0 5px' }}>Password:</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required style={{ padding: '10px', border: '1px solid #ddd' }}/>
-                
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required 
+                        className="form-control bg-secondary text-white rounded-pill border-0"/>
+
                 <button type="submit" style={{ padding: '10px', marginTop: '20px', cursor: 'pointer', backgroundColor: '#007bff', color: 'white' }}>Sign Up</button>
             </form>
             <p style={{ marginTop: '15px', textAlign: 'center' }}>

@@ -17,11 +17,11 @@ function App() {
       <AuthProvider> 
         <div className="App">
           <Routes>
-            {/* Public Routes */}
+            {}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             
-            {/* Protected Routes */}
+            {}
             <Route 
               path="/tasks" 
               element={
@@ -30,10 +30,10 @@ function App() {
                 </PrivateRoute>
               } 
             />
-            {/* Default Route: Redirects to /tasks if logged in, or /login if not */}
+            {}
             <Route path="/" element={<PrivateRoute><TasksPage /></PrivateRoute>} />
             
-            {/* Fallback for unknown URLs */}
+            {}
             <Route path="*" element={<h1 style={{textAlign: 'center', marginTop: '50px'}}>404 - Page Not Found</h1>} />
           </Routes>
         </div>
